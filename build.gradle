@@ -1,13 +1,11 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
+//apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion Integer.valueOf(project.TARGET_SDK_VERSION)
 
     defaultConfig {
         minSdkVersion Integer.valueOf(project.MINIMUM_SDK_VERSION)
-        versionCode 1
-        versionName "0.5.0"
     }
     buildTypes {
         release {
@@ -23,21 +21,24 @@ android {
 
 }
 
-publish {
-    userOrg = "frescoimageviewer"
-    groupId = 'com.github.stfalcon'
-    artifactId = 'frescoimageviewer'
-    publishVersion = '0.5.0'
-    desc = 'Customizable full screen image viewer based on Fresco library, that includes "pinch to zoom" and "swipe to dismiss" gestures'
-    licences = ['Apache-2.0']
-    uploadName = 'FrescoImageViewer'
-    website = 'https://github.com/stfalcon-studio/FrescoImageViewer.git'
-}
+//publish {
+//    userOrg = "frescoimageviewer"
+//    groupId = 'com.github.stfalcon'
+//    artifactId = 'frescoimageviewer'
+//    publishVersion = '0.5.0'
+//    desc = 'Customizable full screen image viewer based on Fresco library, that includes "pinch to zoom" and "swipe to dismiss" gestures'
+//    licences = ['Apache-2.0']
+//    uploadName = 'FrescoImageViewer'
+//    website = 'https://github.com/stfalcon-studio/FrescoImageViewer.git'
+//}
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
+//    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
     implementation 'me.relex:photodraweeview:1.1.0'
+    implementation 'androidx.core:core:1.7.0'
+    implementation 'androidx.viewpager:viewpager:1.0.0'
+    implementation 'androidx.fragment:fragment:1.4.1'
     compileOnly 'com.facebook.fresco:fresco:2.0.0'
     implementation project(path: ':CommonAndroid')
 }
